@@ -1,12 +1,10 @@
-import Card from "./Card";
-
-const Column = ({ title }) => {
+const Column = ({ title, children }) => {
   return (
     <div className="main__column column">
       <div className="column__title">
         <p>{title}</p>
       </div>
-      <Card />
+      <div className="cards">{children}</div>
     </div>
   );
 };

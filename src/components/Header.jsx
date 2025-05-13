@@ -1,4 +1,14 @@
+import { useState } from "react";
+
 function Header() {
+  const [userName] = useState("Ivan Ivanov");
+  const [userEmail] = useState("ivan.ivanov@gmail.com");
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  const handleThemeToggle = () => {
+    setIsDarkTheme(!isDarkTheme);
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -25,14 +35,17 @@ function Header() {
               id="user-set-target"
             >
               {/* <a href="">x</a> */}
-              <p className="pop-user-set__name">Ivan Ivanov</p>
-              <p className="pop-user-set__mail">ivan.ivanov@gmail.com</p>
+
+              <p className="pop-user-set__name">{userName}</p>
+              <p className="pop-user-set__mail">{userEmail}</p>
               <div className="pop-user-set__theme">
                 <p>Темная тема</p>
                 <input
                   type="checkbox"
                   className="checkbox"
                   name="checkbox"
+                  checked={isDarkTheme}
+                  onChange={handleThemeToggle}
                 ></input>
               </div>
               <button type="button" className="_hover03">
