@@ -1,9 +1,12 @@
-function Loader() {
-    return (
-      <div className="loader">
-        <h1 className="loader__text">Данные загружаются...</h1>
-      </div>
-    );
-}
+const Loader = ({ width = 100}) => {
+  return (
+    <div
+      className="loader"
+      style={{ width: width + "%"}}
+    >
+      Данные загружаются...
+    </div>
+  );
+};
 
 export default Loader;

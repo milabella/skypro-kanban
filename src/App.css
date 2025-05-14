@@ -1227,13 +1227,9 @@ body {
 }
 
 .loader {
-  width: 100%;
   margin: auto;
   padding-top: 40vh;
   background-color: #F1F1F1;
-}
-
-.loader__text {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
