@@ -1,3 +1,6 @@
+import { SLink } from '../Link.styled'
+import { PopExitButton, PopExitNoButton } from '../Button.styled'
+
 function PopUser() {
   return (
     <div className="pop-exit" id="popExit">
@@ -8,18 +11,18 @@ function PopUser() {
           </div>
           <form className="pop-exit__form" id="formExit" action="#">
             <div className="pop-exit__form-group">
-              <button className="pop-exit__exit-yes _hover01" id="exitYes">
-                <a href="modal/signin.html">Да, выйти</a>{" "}
-              </button>
-              <button className="pop-exit__exit-no _hover03" id="exitNo">
-                <a href="main.html">Нет, остаться</a>{" "}
-              </button>
+              <PopExitButton id="exitYes">
+                <SLink href="modal/signin.html">Да, выйти</SLink>{' '}
+              </PopExitButton>
+              <PopExitNoButton id="exitNo">
+                <SLink href="main.html">Нет, остаться</SLink>{' '}
+              </PopExitNoButton>
             </div>
           </form>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PopUser;
+export default PopUser

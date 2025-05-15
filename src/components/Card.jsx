@@ -1,12 +1,14 @@
+import { SCard } from "./Div.styled";
+
 const Card = ({ color, topic, title }) => {
   return (
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
           {" "}
-          <div className={`card__theme ${color}`}>
-            <p className={color}>{topic}</p>
-          </div>
+          <SCard $theme={color}>
+            {topic}
+          </SCard>
           <a href="#popBrowse" target="_self">
             <div className="card__btn">
               <div></div>

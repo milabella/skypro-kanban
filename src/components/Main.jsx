@@ -23,25 +23,25 @@ function Main() {
               <div className="main__content">
                 <Column title="Без статуса">
                   <Card
-                    color={"_orange"}
+                    color={"orange"}
                     topic="Web Design"
                     title="Название задачи"
                   />
 
                   <Card
-                    color={"_green"}
+                    color={"green"}
                     topic="Research"
                     title="Название задачи"
                   />
 
                   <Card
-                    color={"_orange"}
+                    color={"orange"}
                     topic="Web Design"
                     title="Название задачи"
                   />
 
                   <Card
-                    color={"_purple"}
+                    color={"purple"}
                     topic="Copywriting"
                     title="Название задачи"
                   />
@@ -49,7 +49,7 @@ function Main() {
 
                 <Column title="Нужно сделать">
                   <Card
-                    color={"_green"}
+                    color={"green"}
                     topic="Research"
                     title="Название задачи"
                   />
@@ -57,19 +57,19 @@ function Main() {
 
                 <Column title="В работе">
                   <Card
-                    color={"_green"}
+                    color={"green"}
                     topic="Research"
                     title="Название задачи"
                   />
 
                   <Card
-                    color={"_purple"}
+                    color={"purple"}
                     topic="Copywriting"
                     title="Название задачи"
                   />
 
                   <Card
-                    color={"_orange"}
+                    color={"orange"}
                     topic="Web Design"
                     title="Название задачи"
                   />
@@ -77,7 +77,7 @@ function Main() {
 
                 <Column title="Тестирование">
                   <Card
-                    color={"_green"}
+                    color={"green"}
                     topic="Research"
                     title="Название задачи"
                   />
@@ -85,7 +85,7 @@ function Main() {
 
                 <Column title="Готово">
                   <Card
-                    color={"_green"}
+                    color={"green"}
                     topic="Research"
                     title="Название задачи"
                   />

@@ -1,4 +1,6 @@
 import Calendar from "../Calendar";
+import { BrowseButtonClose, TaskButton } from '../Button.styled'
+import { SLink } from "../Link.styled";
 
 function PopBrowse() {
   return (
@@ -61,12 +63,12 @@ function PopBrowse() {
             </div>
             <div className="pop-browse__btn-browse ">
               <div className="btn-group">
-                <button className="btn-browse__edit _btn-bor _hover03">
-                  <a href="#">Редактировать задачу</a>
-                </button>
-                <button className="btn-browse__delete _btn-bor _hover03">
-                  <a href="#">Удалить задачу</a>
-                </button>
+                <TaskButton>
+                  <SLink href="#">Редактировать задачу</SLink>
+                </TaskButton>
+                <TaskButton>
+                  <SLink href="#">Удалить задачу</SLink>
+                </TaskButton>
               </div>
               <button className="btn-browse__close _btn-bg _hover01">
                 <a href="#">Закрыть</a>
@@ -87,9 +89,9 @@ function PopBrowse() {
                   <a href="#">Удалить задачу</a>
                 </button>
               </div>
-              <button className="btn-edit__close _btn-bg _hover01">
-                <a href="#">Закрыть</a>
-              </button>
+              <BrowseButtonClose>
+                <SLink href="#">Закрыть</SLink>
+              </BrowseButtonClose>
             </div>
           </div>
         </div>

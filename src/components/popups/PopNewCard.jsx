@@ -1,4 +1,5 @@
 import Calendar from "../Calendar";
+import { NewCardButton } from "../Button.styled";
 
 function PopNewCard() {
   return (
@@ -57,9 +58,9 @@ function PopNewCard() {
                 </div>
               </div>
             </div>
-            <button className="form-new__create _hover01" id="btnCreate">
+            <NewCardButton id="btnCreate">
               Создать задачу
-            </button>
+            </NewCardButton>
           </div>
         </div>
       </div>

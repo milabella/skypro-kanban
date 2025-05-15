@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState } from 'react'
+import { HeaderButton, ExitButton } from './Button.styled'
+import { SLink } from './Link.styled'
 
 function Header() {
-  const [userName] = useState("Ivan Ivanov");
-  const [userEmail] = useState("ivan.ivanov@gmail.com");
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [userName] = useState('Ivan Ivanov')
+  const [userEmail] = useState('ivan.ivanov@gmail.com')
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   const handleThemeToggle = () => {
-    setIsDarkTheme(!isDarkTheme);
+    setIsDarkTheme(!isDarkTheme)
   }
 
   return (
@@ -24,9 +26,9 @@ function Header() {
             </a>
           </div>
           <nav className="header__nav">
-            <button className="header__btn-main-new _hover01" id="btnMainNew">
-              <a href="#popNewCard">Создать новую задачу</a>
-            </button>
+            <HeaderButton id="btnMainNew">
+              <SLink href="#popNewCard">Создать новую задачу</SLink>
+            </HeaderButton>
             <a href="#user-set-target" className="header__user _hover02">
               Ivan Ivanov
             </a>
@@ -48,15 +50,15 @@ function Header() {
                   onChange={handleThemeToggle}
                 ></input>
               </div>
-              <button type="button" className="_hover03">
-                <a href="#popExit">Выйти</a>
-              </button>
+              <ExitButton type="button">
+                <SLink href="#popExit">Выйти</SLink>
+              </ExitButton>
             </div>
           </nav>
         </div>
       </div>
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
