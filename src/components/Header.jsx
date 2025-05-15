@@ -11,6 +11,12 @@ function Header() {
     setIsDarkTheme(!isDarkTheme)
   }
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev)
+  }
+
   return (
     <header className="header">
       <div className="container">
@@ -29,31 +35,35 @@ function Header() {
             <HeaderButton id="btnMainNew">
               <SLink href="#popNewCard">Создать новую задачу</SLink>
             </HeaderButton>
-            <a href="#user-set-target" className="header__user _hover02">
-              Ivan Ivanov
-            </a>
-            <div
-              className="header__pop-user-set pop-user-set"
-              id="user-set-target"
+            <a
+              href="#user-set-target"
+              className="header__user _hover02"
+              onClick={toggleModal}
             >
-              {/* <a href="">x</a> */}
-
-              <p className="pop-user-set__name">{userName}</p>
-              <p className="pop-user-set__mail">{userEmail}</p>
-              <div className="pop-user-set__theme">
-                <p>Темная тема</p>
-                <input
-                  type="checkbox"
-                  className="checkbox"
-                  name="checkbox"
-                  checked={isDarkTheme}
-                  onChange={handleThemeToggle}
-                ></input>
+              {userName}
+            </a>
+            {isModalOpen && (
+              <div
+                className="header__pop-user-set pop-user-set"
+                id="user-set-target"
+              >
+                <p className="pop-user-set__name">{userName}</p>
+                <p className="pop-user-set__mail">{userEmail}</p>
+                <div className="pop-user-set__theme">
+                  <p>Темная тема</p>
+                  <input
+                    type="checkbox"
+                    className="checkbox"
+                    name="checkbox"
+                    checked={isDarkTheme}
+                    onChange={handleThemeToggle}
+                  ></input>
+                </div>
+                <ExitButton type="button">
+                  <SLink href="#popExit">Выйти</SLink>
+                </ExitButton>
               </div>
-              <ExitButton type="button">
-                <SLink href="#popExit">Выйти</SLink>
-              </ExitButton>
-            </div>
+            )}
           </nav>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import { SCard } from "./Div.styled";
 
-const Card = ({ color, topic, title }) => {
+const Card = ({ color, topic, title, date }) => {
   return (
     <div className="cards__item">
       <div className="cards__card card">
@@ -50,7 +50,7 @@ const Card = ({ color, topic, title }) => {
                 </clipPath>
               </defs>
             </svg>
-            <p>30.10.23</p>
+            <p>{date}</p>
           </div>
         </div>
       </div>
