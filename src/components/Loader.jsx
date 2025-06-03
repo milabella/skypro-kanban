@@ -1,12 +1,11 @@
-const Loader = ({ width = 100}) => {
-  return (
-    <div
-      className="loader"
-      style={{ width: width + "%"}}
-    >
-      Данные загружаются...
-    </div>
-  );
-};
+import { LoaderDiv } from './Card.styled'
 
-export default Loader;
+const Loader = ({ width = 100 }) => {
+  return (
+    <LoaderDiv className="loader" style={{ width: width + '%' }}>
+      Данные загружаются...
+    </LoaderDiv>
+  )
+}
+
+export default Loader

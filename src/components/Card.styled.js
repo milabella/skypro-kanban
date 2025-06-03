@@ -1,6 +1,6 @@
 import { styled } from 'styled-components'
 
-const cardTheme = {
+export const cardTheme = {
   orange: {
     background: '#FFE4C2',
     color: '#FF6D00',
@@ -30,4 +30,28 @@ export const SCard = styled.div`
   text-align: center;
   background: ${({ $theme }) => cardTheme[$theme]?.background};
   color: ${({ $theme }) => cardTheme[$theme]?.color};
+`
+export const LoaderDiv = styled.div`
+  margin: auto;
+  padding-top: 40vh;
+  background-color: #f1f1f1;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+`
+export const CardBtn = styled.div`
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2px;
+
+  & > div {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #94a6be;
+  }
 `

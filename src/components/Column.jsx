@@ -1,12 +1,19 @@
-const Column = ({ title, children }) => {
-  return (
-    <div className="main__column column">
-      <div className="column__title">
-        <p>{title}</p>
-      </div>
-      <div className="cards">{children}</div>
-    </div>
-  );
-};
+import Card from './Card'
+import { MainColumn, ColumnTitle } from './Column.styled'
 
-export default Column;
+const Column = ({ title, cards, onCardClick }) => {
+  return (
+    <MainColumn>
+      <ColumnTitle>
+        <p>{title}</p>
+      </ColumnTitle>
+      <div className="cards">
+        {cards.map((card) => (
+          <Card key={card.id} {...card} card={card} onCardClick={onCardClick} />
+        ))}
+      </div>
+    </MainColumn>
+  )
+}
+
+export default Column

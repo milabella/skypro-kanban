@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import { HeaderButton, ExitButton } from './Button.styled'
-import { SLink } from './Link.styled'
+import { SLink, SLinkUser } from './Link.styled'
+import {
+  HeaderStyled,
+  HeaderBlock,
+  Container,
+  HeaderNav,
+} from './Header.styled'
 
 function Header() {
   const [userName] = useState('Ivan Ivanov')
@@ -18,30 +24,34 @@ function Header() {
   }
 
   return (
-    <header className="header">
-      <div className="container">
-        <div className="header__block">
-          <div className="header__logo _show _light">
-            <a href="" target="_self">
-              <img src="images/logo.png" alt="logo"></img>
-            </a>
+    <HeaderStyled>
+      <Container>
+        <HeaderBlock>
+          <div>
+            <SLink href="" target="_self">
+              <img
+                src="images/logo.png"
+                alt="logo"
+                style={{ width: '85px' }}
+              ></img>
+            </SLink>
           </div>
-          <div className="header__logo _dark">
-            <a href="" target="_self">
-              <img src="images/logo_dark.png" alt="logo"></img>
-            </a>
+          <div className="_dark">
+            <SLink href="" target="_self">
+              <img
+                src="images/logo_dark.png"
+                alt="logo"
+                style={{ width: '85px' }}
+              ></img>
+            </SLink>
           </div>
-          <nav className="header__nav">
+          <HeaderNav>
             <HeaderButton id="btnMainNew">
               <SLink href="#popNewCard">Создать новую задачу</SLink>
             </HeaderButton>
-            <a
-              href="#user-set-target"
-              className="header__user _hover02"
-              onClick={toggleModal}
-            >
+            <SLinkUser href="#user-set-target" onClick={toggleModal}>
               {userName}
-            </a>
+            </SLinkUser>
             {isModalOpen && (
               <div
                 className="header__pop-user-set pop-user-set"
@@ -64,10 +74,10 @@ function Header() {
                 </ExitButton>
               </div>
             )}
-          </nav>
-        </div>
-      </div>
-    </header>
+          </HeaderNav>
+        </HeaderBlock>
+      </Container>
+    </HeaderStyled>
   )
 }
 

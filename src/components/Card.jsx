@@ -1,26 +1,29 @@
-import { SCard } from "./Div.styled";
+import { SCard, CardBtn } from './Card.styled'
+import { SLink } from './Link.styled'
 
-const Card = ({ color, topic, title, date }) => {
+const Card = ({ color, topic, title, date, onCardClick, card }) => {
   return (
     <div className="cards__item">
       <div className="cards__card card">
         <div className="card__group">
-          {" "}
-          <SCard $theme={color}>
-            {topic}
-          </SCard>
-          <a href="#popBrowse" target="_self">
-            <div className="card__btn">
+          {' '}
+          <SCard $theme={color}>{topic}</SCard>
+          <SLink
+            href="#popBrowse"
+            target="_self"
+            onClick={() => onCardClick(card)}
+          >
+            <CardBtn>
               <div></div>
               <div></div>
               <div></div>
-            </div>
-          </a>
+            </CardBtn>
+          </SLink>
         </div>
         <div className="card__content">
-          <a href="" target="_blank">
+          <SLink href="" target="_blank">
             <h3 className="card__title">{title}</h3>
-          </a>
+          </SLink>
           <div className="card__date">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +58,7 @@ const Card = ({ color, topic, title, date }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

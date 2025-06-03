@@ -5,7 +5,7 @@ export const cardList = [
     color: 'orange',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Без статуса',
+    status: 'Без статуса',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const cardList = [
     color: 'green',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Без статуса',
+    status: 'Без статуса',
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const cardList = [
     color: 'orange',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Без статуса',
+    status: 'Без статуса',
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const cardList = [
     color: 'purple',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Без статуса',
+    status: 'Без статуса',
   },
   {
     id: 5,
@@ -37,7 +37,7 @@ export const cardList = [
     color: 'green',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Нужно сделать',
+    status: 'Нужно сделать',
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ export const cardList = [
     color: 'green',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'В работе',
+    status: 'В работе',
   },
   {
     id: 7,
@@ -53,7 +53,7 @@ export const cardList = [
     color: 'purple',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'В работе',
+    status: 'В работе',
   },
   {
     id: 8,
@@ -61,7 +61,7 @@ export const cardList = [
     color: 'orange',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'В работе',
+    status: 'В работе',
   },
   {
     id: 9,
@@ -69,7 +69,7 @@ export const cardList = [
     color: 'green',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Тестирование',
+    status: 'Тестирование',
   },
   {
     id: 10,
@@ -77,6 +77,14 @@ export const cardList = [
     color: 'green',
     title: 'Название задачи',
     date: '30.10.23',
-    columnTitle: 'Готово',
+    status: 'Готово',
   },
+]
+
+export const statuses = [
+  'Без статуса',
+  'Нужно сделать',
+  'В работе',
+  'Тестирование',
+  'Готово',
 ]

@@ -1,115 +1,60 @@
-import { useEffect } from "react";
-import Card from "./Card";
-import Column from "./Column";
-import { useState } from "react";
-import Loader from "./Loader";
-
+import { useEffect } from 'react'
+import Column from './Column'
+import { useState } from 'react'
+import Loader from './Loader'
+import { cardList, statuses } from './data'
+import PopBrowse from './popups/PopBrowse'
+import {
+  MainDiv,
+  MainBlock,
+  MainContent,
+  MainContainer,
+} from './Main.styled.js'
 
 function Main() {
-  const [loading, setLoading] = useState(true);
-  
+  const [loading, setLoading] = useState(true)
+  const [selectedCard, setSelectedCard] = useState(null)
+
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
+      setLoading(false)
+    }, 3000)
+  }, [])
+
+  const onCardClick = (card) => {
+    setSelectedCard(card)
+  }
 
   return (
-    <main className="main">
+    <MainDiv id="main">
       <div>
         {loading ? (
           <Loader />
         ) : (
-          <div className="container">
-            <div className="main__block">
-              <div className="main__content">
-                <Column title="Без статуса">
-                  <Card
-                    color={'orange'}
-                    topic="Web Design"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-
-                  <Card
-                    color={'green'}
-                    topic="Research"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-
-                  <Card
-                    color={'orange'}
-                    topic="Web Design"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-
-                  <Card
-                    color={'purple'}
-                    topic="Copywriting"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-                </Column>
-
-                <Column title="Нужно сделать">
-                  <Card
-                    color={'green'}
-                    topic="Research"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-                </Column>
-
-                <Column title="В работе">
-                  <Card
-                    color={'green'}
-                    topic="Research"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-
-                  <Card
-                    color={'purple'}
-                    topic="Copywriting"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-
-                  <Card
-                    color={'orange'}
-                    topic="Web Design"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-                </Column>
-
-                <Column title="Тестирование">
-                  <Card
-                    color={'green'}
-                    topic="Research"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-                </Column>
-
-                <Column title="Готово">
-                  <Card
-                    color={'green'}
-                    topic="Research"
-                    title="Название задачи"
-                    date="30.10.23"
-                  />
-                </Column>
-              </div>
-            </div>
-          </div>
+          <MainContainer>
+            <MainBlock>
+              <MainContent>
+                {statuses.map((status) => {
+                  const cardForColumn = cardList.filter(
+                    (card) => card.status === status,
+                  )
+                  return (
+                    <Column
+                      key={status}
+                      title={status}
+                      cards={cardForColumn}
+                      onCardClick={onCardClick}
+                    />
+                  )
+                })}
+              </MainContent>
+              {selectedCard && <PopBrowse card={selectedCard} />}
+            </MainBlock>
+          </MainContainer>
         )}
       </div>
-    </main>
+    </MainDiv>
   )
 }
 
-
-export default Main;
+export default Main

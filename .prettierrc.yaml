@@ -1,4 +1,5 @@
 tab width: 4
-semi: false 
+semi: false
 singleQuote: true
+quoteProps: 'consistent'
 endOfLine: auto

@@ -15,7 +15,7 @@ function PopUser() {
                 <SLink href="modal/signin.html">Да, выйти</SLink>{' '}
               </PopExitButton>
               <PopExitNoButton id="exitNo">
-                <SLink href="main.html">Нет, остаться</SLink>{' '}
+                <SLink href="#main">Нет, остаться</SLink>{' '}
               </PopExitNoButton>
             </div>
           </form>
