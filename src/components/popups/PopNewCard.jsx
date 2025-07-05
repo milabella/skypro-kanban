@@ -1,4 +1,7 @@
-import Calendar from "../Calendar";
+import Calendar from '../Calendar'
+import { NewCardButton } from '../styles/Button.styled'
+import { SLink } from '../styles/Link.styled'
+import { PTag } from '../styles/Popups.styled'
 
 function PopNewCard() {
   return (
@@ -7,9 +10,9 @@ function PopNewCard() {
         <div className="pop-new-card__block">
           <div className="pop-new-card__content">
             <h3 className="pop-new-card__ttl">Создание задачи</h3>
-            <a href="#" className="pop-new-card__close">
+            <SLink href="#" className="pop-new-card__close">
               &#10006;
-            </a>
+            </SLink>
             <div className="pop-new-card__wrap">
               <form
                 className="pop-new-card__form form-new"
@@ -47,24 +50,28 @@ function PopNewCard() {
               <p className="categories__p subttl">Категория</p>
               <div className="categories__themes">
                 <div className="categories__theme _orange _active-category">
-                  <p className="_orange">Web Design</p>
+                  <PTag style={{ background: '#FFE4C2', color: '#FF6D00' }}>
+                    Web Design
+                  </PTag>
                 </div>
                 <div className="categories__theme _green">
-                  <p className="_green">Research</p>
+                  <PTag style={{ background: '#B4FDD1', color: '#06B16E' }}>
+                    Research
+                  </PTag>
                 </div>
                 <div className="categories__theme _purple">
-                  <p className="_purple">Copywriting</p>
+                  <PTag style={{ background: '#E9D4FF', color: '#9A48F1' }}>
+                    Copywriting
+                  </PTag>
                 </div>
               </div>
             </div>
-            <button className="form-new__create _hover01" id="btnCreate">
-              Создать задачу
-            </button>
+            <NewCardButton id="btnCreate">Создать задачу</NewCardButton>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PopNewCard;
+export default PopNewCard

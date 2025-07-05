@@ -1,14 +1,19 @@
-import Card from "./Card";
+import Card from './Card'
+import { MainColumn, ColumnTitle, ColumnCards } from './styles/Column.styled'
 
-const Column = ({ title }) => {
+const Column = ({ title, cards, onCardClick }) => {
   return (
-    <div className="main__column column">
-      <div className="column__title">
+    <MainColumn>
+      <ColumnTitle>
         <p>{title}</p>
-      </div>
-      <Card />
-    </div>
-  );
-};
+      </ColumnTitle>
+      <ColumnCards>
+        {cards.map((card) => (
+          <Card key={card.id} {...card} card={card} onCardClick={onCardClick} />
+        ))}
+      </ColumnCards>
+    </MainColumn>
+  )
+}
 
-export default Column;
+export default Column
