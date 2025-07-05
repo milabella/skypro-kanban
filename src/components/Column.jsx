@@ -1,5 +1,5 @@
 import Card from './Card'
-import { MainColumn, ColumnTitle } from './Column.styled'
+import { MainColumn, ColumnTitle, ColumnCards } from './styles/Column.styled'
 
 const Column = ({ title, cards, onCardClick }) => {
   return (
@@ -7,11 +7,11 @@ const Column = ({ title, cards, onCardClick }) => {
       <ColumnTitle>
         <p>{title}</p>
       </ColumnTitle>
-      <div className="cards">
+      <ColumnCards>
         {cards.map((card) => (
           <Card key={card.id} {...card} card={card} onCardClick={onCardClick} />
         ))}
-      </div>
+      </ColumnCards>
     </MainColumn>
   )
 }

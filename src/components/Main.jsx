@@ -9,7 +9,7 @@ import {
   MainBlock,
   MainContent,
   MainContainer,
-} from './Main.styled.js'
+} from './styles/Main.styled.js'
 
 function Main() {
   const [loading, setLoading] = useState(true)

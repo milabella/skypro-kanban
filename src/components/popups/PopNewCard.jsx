@@ -1,7 +1,7 @@
 import Calendar from '../Calendar'
-import { NewCardButton } from '../Button.styled'
-import { SLink } from '../Link.styled'
-import { PTag } from '../Popups.styled'
+import { NewCardButton } from '../styles/Button.styled'
+import { SLink } from '../styles/Link.styled'
+import { PTag } from '../styles/Popups.styled'
 
 function PopNewCard() {
   return (

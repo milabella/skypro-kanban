@@ -1,11 +1,11 @@
-import { GlobalStyle } from './components/GlobalStyles'
-import './App.css'
+import { GlobalStyle } from './components/styles/GlobalStyles'
+import './index.css'
 import Header from './components/Header'
 import Main from './components/Main'
 import PopBrowse from './components/popups/PopBrowse'
 import PopNewCard from './components/popups/PopNewCard'
 import PopUser from './components/popups/PopUser'
-import { AppWrapper } from './components/Main.styled'
+import { AppWrapper } from './components/styles/Main.styled'
 
 function App() {
   return (

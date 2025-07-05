@@ -1,12 +1,12 @@
 import { useState } from 'react'
-import { HeaderButton, ExitButton } from './Button.styled'
-import { SLink, SLinkUser } from './Link.styled'
+import { HeaderButton, ExitButton } from './styles/Button.styled'
+import { SLink, SLinkUser } from './styles/Link.styled'
 import {
   HeaderStyled,
   HeaderBlock,
   Container,
   HeaderNav,
-} from './Header.styled'
+} from './styles/Header.styled'
 
 function Header() {
   const [userName] = useState('Ivan Ivanov')

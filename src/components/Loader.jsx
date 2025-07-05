@@ -1,4 +1,4 @@
-import { LoaderDiv } from './Card.styled'
+import { LoaderDiv } from './styles/Card.styled'
 
 const Loader = ({ width = 100 }) => {
   return (

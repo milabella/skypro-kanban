@@ -1,5 +1,5 @@
-import { SLink } from '../Link.styled'
-import { PopExitButton, PopExitNoButton } from '../Button.styled'
+import { SLink } from '../styles/Link.styled'
+import { PopExitButton, PopExitNoButton } from '../styles/Button.styled'
 
 function PopUser() {
   return (

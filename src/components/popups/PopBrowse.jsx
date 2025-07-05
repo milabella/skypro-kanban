@@ -1,11 +1,11 @@
 import Calendar from '../Calendar'
-import { SLink } from '../Link.styled'
+import { SLink } from '../styles/Link.styled'
 import {
   BtnGroup,
   TaskStyledButton,
   BrowseStyledButtonClose,
   PTag,
-} from '../Popups.styled'
+} from '../styles/Popups.styled'
 
 const PopBrowse = ({ card }) => {
   if (!card) return null
