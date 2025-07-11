@@ -1,34 +1,48 @@
-import Calendar from "../Calendar";
+import Calendar from '../Calendar'
+import { SLink } from '../styles/Link.styled'
+import {
+  BtnGroup,
+  TaskStyledButton,
+  BrowseStyledButtonClose,
+  PTag,
+} from '../styles/Popups.styled'
 
-function PopBrowse() {
+const PopBrowse = ({ card }) => {
+  if (!card) return null
+
   return (
     <div className="pop-browse" id="popBrowse">
       <div className="pop-browse__container">
         <div className="pop-browse__block">
           <div className="pop-browse__content">
             <div className="pop-browse__top-block">
-              <h3 className="pop-browse__ttl">Название задачи</h3>
-              <div className="categories__theme theme-top _orange _active-category">
-                <p className="_orange">Web Design</p>
+              <h3 className="pop-browse__ttl">{card.title}</h3>
+              <div
+                className={`categories__theme theme-top _${card.color} _active-category`}
+              >
+                <PTag $theme={card.color}>{card.topic}</PTag>
               </div>
             </div>
-            <div className="pop-browse__status status">
-              <p className="status__p subttl">Статус</p>
+            <div style={{ marginBottom: '11px' }}>
+              <p
+                style={{
+                  marginBottom: '14px',
+                  color: '#000',
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  lineHeight: '1',
+                }}
+              >
+                Статус
+              </p>
               <div className="status__themes">
-                <div className="status__theme _hide">
-                  <p>Без статуса</p>
-                </div>
-                <div className="status__theme _gray">
-                  <p className="_gray">Нужно сделать</p>
-                </div>
-                <div className="status__theme _hide">
-                  <p>В работе</p>
-                </div>
-                <div className="status__theme _hide">
-                  <p>Тестирование</p>
-                </div>
-                <div className="status__theme _hide">
-                  <p>Готово</p>
+                <div
+                  className="status__theme"
+                  style={{ background: '#94A6BE', color: '#FFFFFF' }}
+                >
+                  <p style={{ background: '#94A6BE', color: '#FFFFFF' }}>
+                    {card.status}
+                  </p>
                 </div>
               </div>
             </div>
@@ -55,47 +69,30 @@ function PopBrowse() {
             </div>
             <div className="theme-down__categories theme-down">
               <p className="categories__p subttl">Категория</p>
-              <div className="categories__theme _orange _active-category">
-                <p className="_orange">Web Design</p>
+              <div
+                className={`categories__theme theme-top _${card.color} _active-category`}
+              >
+                <PTag $theme={card.color}>{card.topic}</PTag>
               </div>
             </div>
-            <div className="pop-browse__btn-browse ">
-              <div className="btn-group">
-                <button className="btn-browse__edit _btn-bor _hover03">
-                  <a href="#">Редактировать задачу</a>
-                </button>
-                <button className="btn-browse__delete _btn-bor _hover03">
-                  <a href="#">Удалить задачу</a>
-                </button>
-              </div>
-              <button className="btn-browse__close _btn-bg _hover01">
-                <a href="#">Закрыть</a>
-              </button>
-            </div>
-            <div className="pop-browse__btn-edit _hide">
-              <div className="btn-group">
-                <button className="btn-edit__edit _btn-bg _hover01">
-                  <a href="#">Сохранить</a>
-                </button>
-                <button className="btn-edit__edit _btn-bor _hover03">
-                  <a href="#">Отменить</a>
-                </button>
-                <button
-                  className="btn-edit__delete _btn-bor _hover03"
-                  id="btnDelete"
-                >
-                  <a href="#">Удалить задачу</a>
-                </button>
-              </div>
-              <button className="btn-edit__close _btn-bg _hover01">
-                <a href="#">Закрыть</a>
-              </button>
+            <div className="pop-browse__btn-browse">
+              <BtnGroup>
+                <TaskStyledButton>
+                  <SLink href="#">Редактировать задачу</SLink>
+                </TaskStyledButton>
+                <TaskStyledButton>
+                  <SLink href="#">Удалить задачу</SLink>
+                </TaskStyledButton>
+              </BtnGroup>
+              <BrowseStyledButtonClose>
+                <SLink href="#">Закрыть</SLink>
+              </BrowseStyledButtonClose>
             </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default PopBrowse;
+export default PopBrowse
